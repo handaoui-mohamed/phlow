@@ -68,7 +68,7 @@ export default class Monitor extends PureComponent {
                 <Tooltip title="----------">
                   <Map />
                 </Tooltip>
-              </div>
+              </div> 
             </Card>
           </Col>
           <Col xl={6} lg={24} md={24} sm={24} xs={24}>

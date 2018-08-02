@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Polygon, GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
 import FenceIcon from '../../assets/location.png'
+import BlockedFenceIcon from '../../assets/fence.png'
 import OpenFenceIcon from '../../assets/fence-open.png'
 import ClosedFenceIcon from '../../assets/fence-close.png'
 import mapStyles from './style.js'
@@ -18,14 +19,29 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 ))
 
 class Map extends Component {
-    state = { modalOpen: false, selectedMarker: null, barriersState: [true, false, false, true, true, true, false, false] }
+    state = { modalOpen: false, selectedMarker: null, barriersState: [1, 0, 0, 1, -1, 1, 0, 0] }
 
     openModal = () => this.setState({ modalOpen: true })
 
     toggleBarrier = index => () => {
         const states = [].concat(this.state.barriersState)
-        states[index] = !states[index]
+        states[index] = states[index] !== -1 ? -1 : 0
         this.setState({ barriersState: states })
+    }
+    getRandomInt = (max) => {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    componentWillMount() {
+        setInterval(() => {
+            const randomBarrier = this.getRandomInt(this.state.barriersState.length);
+            const states = [].concat(this.state.barriersState)
+            console.log(randomBarrier)
+            if (this.state.barriersState[randomBarrier] !== -1) {
+                states[randomBarrier] = this.getRandomInt(2)
+                this.setState({ barriersState: states })
+            }
+        }, 500)
     }
 
     render() {
@@ -48,7 +64,10 @@ class Map extends Component {
                                     <img
                                         onClick={this.toggleBarrier(index)}
                                         style={{ marginTop: '-20px' }}
-                                        src={barrier ? OpenFenceIcon : ClosedFenceIcon} width={100} />
+                                        src={
+                                            barrier === -1 ? BlockedFenceIcon :
+                                                barrier ? OpenFenceIcon : ClosedFenceIcon}
+                                        width={100} />
                                 </div>
                             )
                         }
