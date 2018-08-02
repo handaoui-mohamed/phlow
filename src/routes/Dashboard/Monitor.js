@@ -8,6 +8,7 @@ import CountDown from 'components/CountDown';
 import ActiveChart from 'components/ActiveChart';
 import Authorized from '../../utils/Authorized';
 import styles from './Monitor.less';
+import Map from 'components/Map'
 
 const { Secured } = Authorized;
 
@@ -39,62 +40,65 @@ export default class Monitor extends PureComponent {
       <Fragment>
         <Row gutter={24}>
           <Col xl={18} lg={24} md={24} sm={24} xs={24} style={{ marginBottom: 24 }}>
-            <Card title="活动实时交易情况" bordered={false}>
+            <Card title="Mina Map" bordered={false}>
               <Row>
                 <Col md={6} sm={12} xs={24}>
                   <NumberInfo
-                    subTitle="今日交易总额"
-                    suffix="元"
+                    subTitle="------"
+                    suffix=""
                     total={numeral(124543233).format('0,0')}
                   />
                 </Col>
                 <Col md={6} sm={12} xs={24}>
-                  <NumberInfo subTitle="销售目标完成率" total="92%" />
+                  <NumberInfo subTitle="--------" total="92%" />
                 </Col>
                 <Col md={6} sm={12} xs={24}>
-                  <NumberInfo subTitle="活动剩余时间" total={<CountDown target={targetTime} />} />
+                  <NumberInfo subTitle="-------" total={<CountDown target={targetTime} />} />
                 </Col>
                 <Col md={6} sm={12} xs={24}>
                   <NumberInfo
-                    subTitle="每秒交易总额"
-                    suffix="元"
+                    subTitle="------"
+                    suffix=""
                     total={numeral(234).format('0,0')}
                   />
                 </Col>
               </Row>
               <div className={styles.mapChart}>
-                <Tooltip title="等待后期实现">
-                  <img
-                    src="https://gw.alipayobjects.com/zos/rmsportal/HBWnDEUXCnGnGrRfrpKa.png"
-                    alt="map"
+                <Tooltip title="----------">
+                  <Map
+                    isMarkerShown
+                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDLHhE48HvQ6B3407JD41rZwFa_tnf5ppc"
+                    loadingElement={<div style={{ height: `100%` }} />}
+                    containerElement={<div style={{ height: `400px` }} />}
+                    mapElement={<div style={{ height: `100%` }} />}
                   />
                 </Tooltip>
               </div>
             </Card>
           </Col>
           <Col xl={6} lg={24} md={24} sm={24} xs={24}>
-            <Card title="活动情况预测" style={{ marginBottom: 24 }} bordered={false}>
+            <Card title="------------" style={{ marginBottom: 24 }} bordered={false}>
               <ActiveChart />
             </Card>
             <Card
-              title="券核效率"
+              title="-----------"
               style={{ marginBottom: 24 }}
               bodyStyle={{ textAlign: 'center' }}
               bordered={false}
             >
-              <Gauge title="跳出率" height={180} percent={87} />
+              <Gauge title="------------" height={180} percent={87} />
             </Card>
           </Col>
         </Row>
         <Row gutter={24}>
           <Col xl={12} lg={24} sm={24} xs={24}>
-            <Card title="各品类占比" bordered={false} className={styles.pieCard}>
+            <Card title="-----------" bordered={false} className={styles.pieCard}>
               <Row style={{ padding: '16px 0' }}>
                 <Col span={8}>
                   <Pie
                     animate={false}
                     percent={28}
-                    subTitle="中式快餐"
+                    subTitle="---------"
                     total="28%"
                     height={128}
                     lineWidth={2}
@@ -105,7 +109,7 @@ export default class Monitor extends PureComponent {
                     animate={false}
                     color="#5DDECF"
                     percent={22}
-                    subTitle="西餐"
+                    subTitle="----------"
                     total="22%"
                     height={128}
                     lineWidth={2}
@@ -116,7 +120,7 @@ export default class Monitor extends PureComponent {
                     animate={false}
                     color="#2FC25B"
                     percent={32}
-                    subTitle="火锅"
+                    subTitle="----------"
                     total="32%"
                     height={128}
                     lineWidth={2}
@@ -127,7 +131,7 @@ export default class Monitor extends PureComponent {
           </Col>
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
-              title="热门搜索"
+              title="---------"
               loading={loading}
               bordered={false}
               bodyStyle={{ overflow: 'hidden' }}
@@ -137,11 +141,11 @@ export default class Monitor extends PureComponent {
           </Col>
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
-              title="资源剩余"
+              title="---------"
               bodyStyle={{ textAlign: 'center', fontSize: 0 }}
               bordered={false}
             >
-              <WaterWave height={161} title="补贴资金剩余" percent={34} />
+              <WaterWave height={161} title="--------" percent={34} />
             </Card>
           </Col>
         </Row>
