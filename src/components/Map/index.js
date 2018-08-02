@@ -27,32 +27,43 @@ class Map extends Component {
     state = {
         barrierModalOpen: false,
         regionModalOpen: false,
-        selectedMarker: null,
+        selectedMarker: -1,
         selectedRegion: -1,
-        barriersState: [1, 0, 0, 1, -1, 1, 0, 0]
+        barriersState: [
+            [1, 0, 0, 1, 0, 1, 0, 0],
+            [1, 0, 0, 1, 0, 1, 0, 1],
+            [1, 0, 0, 1, 0, -1, -1, -1],
+            [1, 0, 0, 1, 0, 1, 0, -1]
+        ]
     }
 
-    openBarrierModal = () => this.setState({ barrierModalOpen: true })
+    openBarrierModal = index => () => this.setState({ barrierModalOpen: true, selectedMarker: index })
     openRegionModal = index => () => this.setState({ regionModalOpen: true, selectedRegion: index })
 
-    toggleBarrier = index => () => {
+    toggleBarrier = (rowIndex, index) => () => {
         const states = [].concat(this.state.barriersState)
-        states[index] = states[index] !== -1 ? -1 : 0
+        const rowStates = [].concat(this.state.barriersState[rowIndex])
+        rowStates[index] = rowStates[index] !== -1 ? -1 : 0
+        states[rowIndex] = rowStates
         this.setState({ barriersState: states })
     }
 
-    getRandomInt = (max) => {
-        return Math.floor(Math.random() * Math.floor(max));
+    getRandomInt = (min = 0, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     componentWillMount() {
         setInterval(() => {
             if (this.state.barrierModalOpen) {
-                const randomBarrier = this.getRandomInt(this.state.barriersState.length);
-                const states = [].concat(this.state.barriersState)
+                const row = this.getRandomInt(1, markers[this.state.selectedMarker].row) - 1;
+                console.log(row)
+                const randomBarrier = this.getRandomInt(0, this.state.barriersState[row].length - 1);
                 console.log(randomBarrier)
-                if (this.state.barriersState[randomBarrier] !== -1) {
-                    states[randomBarrier] = this.getRandomInt(2)
+                const states = [].concat(this.state.barriersState)
+                const rowStates = [].concat(this.state.barriersState[row])
+                if (this.state.barriersState[row][randomBarrier] !== -1) {
+                    rowStates[randomBarrier] = this.getRandomInt(0, 1)
+                    states[row] = rowStates
                     this.setState({ barriersState: states })
                 }
             }
@@ -71,22 +82,30 @@ class Map extends Component {
                     onCancel={() => this.setState({ barrierModalOpen: false })}
                     onOk={() => this.setState({ barrierModalOpen: false })}
                 >
-                    <Row style={{ display: '-webkit-box' }}>
-                        {
-                            this.state.barriersState.map((barrier, index) =>
-                                <div key={index} style={{ width: '100px', textAlign: 'center', cursor: 'pointer' }}>
-                                    <span style={{ fontSize: 20 }}>{index + 1}</span>
-                                    <img
-                                        onClick={this.toggleBarrier(index)}
-                                        style={{ marginTop: '-20px' }}
-                                        src={
-                                            barrier === -1 ? BlockedFenceIcon :
-                                                barrier ? OpenFenceIcon : ClosedFenceIcon}
-                                        width={100} />
-                                </div>
-                            )
-                        }
-                    </Row>
+                    {
+                        this.state.selectedMarker > -1 &&
+                        this.state.barriersState.slice(0, markers[this.state.selectedMarker].row).map((row, rowIndex) => (
+                            <div>
+                                {markers[this.state.selectedMarker].row > 1 && <h3> Level {rowIndex + 1}</h3>}
+                                <Row style={{ display: '-webkit-box' }} key={rowIndex}>
+                                    {
+                                        row.map((barrier, index) =>
+                                            <div key={index} style={{ width: '100px', textAlign: 'center', cursor: 'pointer' }}>
+                                                <span style={{ fontSize: 20 }}>{index + 1}</span>
+                                                <img
+                                                    onClick={this.toggleBarrier(rowIndex, index)}
+                                                    style={{ marginTop: '-20px' }}
+                                                    src={
+                                                        barrier === -1 ? BlockedFenceIcon :
+                                                            barrier ? OpenFenceIcon : ClosedFenceIcon}
+                                                    width={100} />
+                                            </div>
+                                        )
+                                    }
+                                </Row>
+                            </div>
+                        ))
+                    }
                 </Modal>
 
                 <Modal
@@ -118,7 +137,7 @@ class Map extends Component {
                     {
                         markers.map((position, index) => (
                             <Marker key={index}
-                                onClick={this.openBarrierModal} zIndex={101}
+                                onClick={this.openBarrierModal(index)} zIndex={101}
                                 position={position} icon={FenceIcon} />
                         ))
                     }
