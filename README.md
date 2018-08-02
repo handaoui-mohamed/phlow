@@ -12,6 +12,9 @@ Using the data that we have from our gates, we can implement an application that
 Also, once we have this data, we can apply some data mining algorithms ( prediction algorithms, classification algorithms …) and we can use Machine Learning process for this data too.
 #### 4th: use data
 1- The application will automatically stop the gates in case of an overload in the zone ( some gates or all the gates)
+
 2- The application will allow the controllers ( form Crowd Management Authority هيئة إدارة الحشود ) to open or close the gates manually.
+
 3- Now we have the numbe#r of Hadjjaj in each zone, we can schedule automatically the exact time for leaving for each zone, and share it with them using public TVs or notifications via mobile,
+
 4- With this data we can estimate how many people each target zone can support, so we can increase the Hadjjaj number by next hajj season.
