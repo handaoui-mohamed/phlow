@@ -9,6 +9,7 @@ import ActiveChart from 'components/ActiveChart';
 import Authorized from '../../utils/Authorized';
 import styles from './Monitor.less';
 import Map from 'components/Map'
+import Clock from 'react-digital-clock';
 
 const { Secured } = Authorized;
 
@@ -77,7 +78,7 @@ export default class Monitor extends PureComponent {
             </Card>
           </Col>
           <Col xl={6} lg={24} md={24} sm={24} xs={24}>
-            <Card title="------------" style={{ marginBottom: 24 }} bordered={false}>
+            <Card title={<div style={{ backgroundColor: '#555' }}> <Clock /> </div>} style={{ marginBottom: 24 }} bordered={false}>
               <ActiveChart />
             </Card>
             <Card
