@@ -66,13 +66,7 @@ export default class Monitor extends PureComponent {
               </Row>
               <div className={styles.mapChart}>
                 <Tooltip title="----------">
-                  <Map
-                    isMarkerShown
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDLHhE48HvQ6B3407JD41rZwFa_tnf5ppc"
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                  />
+                  <Map />
                 </Tooltip>
               </div>
             </Card>
@@ -133,11 +127,10 @@ export default class Monitor extends PureComponent {
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
               title="---------"
-              loading={loading}
+              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
               bordered={false}
-              bodyStyle={{ overflow: 'hidden' }}
             >
-              <TagCloud data={tags} height={161} />
+              <WaterWave height={161} title="--------" percent={72} />
             </Card>
           </Col>
           <Col xl={6} lg={12} sm={24} xs={24}>
