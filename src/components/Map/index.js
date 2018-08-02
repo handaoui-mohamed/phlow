@@ -41,7 +41,7 @@ class Map extends Component {
                 states[randomBarrier] = this.getRandomInt(2)
                 this.setState({ barriersState: states })
             }
-        }, 500)
+        }, 300)
     }
 
     render() {
@@ -125,6 +125,32 @@ class Map extends Component {
                             { lat: 21.423841, lng: 39.893513 }
                         ]}
                     />
+
+
+                    {/* Mouaim */}
+                    <Polygon
+                        label={'region-3'}
+                        options={{
+                            strokeColor: '#039be5', strokeWeight: 2,
+                            fillColor: '#039be5', fillOpacity: 0.5
+                        }}
+                        zIndex={100}
+                        path={[
+                            { lat: 21.423790, lng: 39.893435 },
+                            { lat: 21.421059, lng: 39.893759 },
+                            { lat: 21.420935, lng: 39.893674 },
+                            { lat: 21.420671, lng: 39.892750 },
+                            { lat: 21.420832, lng: 39.892531 },
+                            { lat: 21.421661, lng: 39.892254 },
+                            { lat: 21.422269, lng: 39.892174 },
+                            { lat: 21.422838, lng: 39.892202 },
+                            { lat: 21.423184, lng: 39.892196 },
+                            { lat: 21.423690, lng: 39.892397 },
+                            { lat: 21.423790, lng: 39.893435 }
+                        ]}
+                    />
+
+
                     {/* /regions */}
 
 
