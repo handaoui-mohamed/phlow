@@ -1,15 +1,48 @@
 import React from "react"
-import { Polygon, GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps"
+import { Polygon, GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
+import FenceIcon from '../../assets/location.png'
+import mapStyles from './style.js'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={14}
         defaultCenter={{ lat: 21.416017, lng: 39.892154 }}
+        options={{
+            styles: mapStyles
+        }}
     >
+        <Marker zIndex={101} position={{ lat: 21.423785, lng: 39.893493 }} icon={FenceIcon} />
+        <Marker zIndex={101} position={{ lat: 21.420980, lng: 39.893824 }} icon={FenceIcon} />
+
+        {/* regions */}
         <Polygon
+            label={'helloooo'}
             options={{
                 strokeColor: '#039be5', strokeWeight: 2,
                 fillColor: '#039be5', fillOpacity: 0.2
+            }}
+            zIndex={100}
+            path={[
+                { lat: 21.423790, lng: 39.893435 },
+                { lat: 21.421059, lng: 39.893759 },
+                { lat: 21.420935, lng: 39.893674 },
+                { lat: 21.420671, lng: 39.892750 },
+                { lat: 21.420832, lng: 39.892531 },
+                { lat: 21.421661, lng: 39.892254 },
+                { lat: 21.422269, lng: 39.892174 },
+                { lat: 21.422838, lng: 39.892202 },
+                { lat: 21.423184, lng: 39.892196 },
+                { lat: 21.423690, lng: 39.892397 },
+                { lat: 21.423790, lng: 39.893435 }
+            ]}
+        />
+        {/* /regions */}
+
+
+        <Polygon
+            options={{
+                strokeColor: '#fff', strokeWeight: 2,
+                fillColor: '#fff', fillOpacity: 0.2
             }}
             path={[
                 { lat: 21.426493, lng: 39.869610 },
