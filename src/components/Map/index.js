@@ -5,7 +5,7 @@ import BlockedFenceIcon from '../../assets/fence.png'
 import OpenFenceIcon from '../../assets/fence-open.png'
 import ClosedFenceIcon from '../../assets/fence-close.png'
 import mapStyles from './style.js'
-import { Modal, Row, Col } from 'antd';
+import { Modal, Row } from 'antd';
 
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
@@ -19,7 +19,20 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 ))
 
 class Map extends Component {
-    state = { modalOpen: false, selectedMarker: null, barriersState: [1, 0, 0, 1, -1, 1, 0, 0] }
+    state = {
+        modalOpen: false,
+        selectedMarker: null,
+        barriersState: [1, 0, 0, 1, -1, 1, 0, 0],
+        markers: [
+            { lat: 21.423785, lng: 39.893493 },
+            { lat: 21.420980, lng: 39.893824 },
+            { lat: 21.423739, lng: 39.892350 },
+            { lat: 21.424013, lng: 39.894981 },
+            { lat: 21.424137, lng: 39.895062 },
+            { lat: 21.425033, lng: 39.894703 },
+            { lat: 21.424946, lng: 39.893124 }
+        ]
+    }
 
     openModal = () => this.setState({ modalOpen: true })
 
@@ -81,9 +94,14 @@ class Map extends Component {
                     containerElement={<div style={{ height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 >
-                    <Marker onClick={this.openModal} zIndex={101} position={{ lat: 21.423785, lng: 39.893493 }} icon={FenceIcon} />
-                    <Marker onClick={this.openModal} zIndex={101} position={{ lat: 21.420980, lng: 39.893824 }} icon={FenceIcon} />
-
+                    {
+                        this.state.markers.map((position, index) => (
+                            <Marker key={index}
+                                onClick={this.openModal} zIndex={101}
+                                position={position} icon={FenceIcon} />
+                        ))
+                    }
+                    
                     {/* regions */}
                     <Polygon
                         label={'region-1'}
@@ -131,22 +149,26 @@ class Map extends Component {
                     <Polygon
                         label={'region-3'}
                         options={{
-                            strokeColor: '#039be5', strokeWeight: 2,
-                            fillColor: '#039be5', fillOpacity: 0.5
+                            strokeColor: '#e74c3c', strokeWeight: 2,
+                            fillColor: '#e74c3c', fillOpacity: 0.5
                         }}
                         zIndex={100}
                         path={[
-                            { lat: 21.423790, lng: 39.893435 },
-                            { lat: 21.421059, lng: 39.893759 },
-                            { lat: 21.420935, lng: 39.893674 },
-                            { lat: 21.420671, lng: 39.892750 },
-                            { lat: 21.420832, lng: 39.892531 },
-                            { lat: 21.421661, lng: 39.892254 },
-                            { lat: 21.422269, lng: 39.892174 },
-                            { lat: 21.422838, lng: 39.892202 },
-                            { lat: 21.423184, lng: 39.892196 },
-                            { lat: 21.423690, lng: 39.892397 },
-                            { lat: 21.423790, lng: 39.893435 }
+                            { lat: 21.423785, lng: 39.892383 },
+                            { lat: 21.423998, lng: 39.894511 },
+                            { lat: 21.424030, lng: 39.894993 },
+                            { lat: 21.424112, lng: 39.895034 },
+                            { lat: 21.424463, lng: 39.894988 },
+                            { lat: 21.424728, lng: 39.894890 },
+                            { lat: 21.424939, lng: 39.894704 },
+                            { lat: 21.425081, lng: 39.894521 },
+                            { lat: 21.425203, lng: 39.894151 },
+                            { lat: 21.425212, lng: 39.893846 },
+                            { lat: 21.425085, lng: 39.893450 },
+                            { lat: 21.424875, lng: 39.893169 },
+                            { lat: 21.424528, lng: 39.892849 },
+                            { lat: 21.423953, lng: 39.892449 },
+                            { lat: 21.423785, lng: 39.892383 },
                         ]}
                     />
 
