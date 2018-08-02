@@ -1,6 +1,9 @@
 [
     {
         "name": "region-1",
+        "area": 80000,
+        "max_population": 25000,
+        "current_population": 15200,
         "options": {
             "strokeColor": "#039be5",
             "strokeWeight": 2,
@@ -56,6 +59,9 @@
     },
     {
         "name": "region-2",
+        "area": 80000,
+        "max_population": 25000,
+        "current_population": 1704,
         "options": {
             "strokeColor": "#2ecc71",
             "strokeWeight": 2,
@@ -99,6 +105,9 @@
     },
     {
         "name": "region-3",
+        "area": 40000,
+        "max_population": 10000,
+        "current_population": 9702,
         "options": {
             "strokeColor": "#e74c3c",
             "strokeWeight": 2,

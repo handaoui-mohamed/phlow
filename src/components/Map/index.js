@@ -28,11 +28,12 @@ class Map extends Component {
         barrierModalOpen: false,
         regionModalOpen: false,
         selectedMarker: null,
+        selectedRegion: -1,
         barriersState: [1, 0, 0, 1, -1, 1, 0, 0]
     }
 
     openBarrierModal = () => this.setState({ barrierModalOpen: true })
-    openRegionModal = () => this.setState({ regionModalOpen: true })
+    openRegionModal = index => () => this.setState({ regionModalOpen: true, selectedRegion: index })
 
     toggleBarrier = index => () => {
         const states = [].concat(this.state.barriersState)
@@ -97,9 +98,14 @@ class Map extends Component {
                     onCancel={() => this.setState({ regionModalOpen: false })}
                     onOk={() => this.setState({ regionModalOpen: false })}
                 >
-                    <p><b>Area               : </b> 40 000 m² </p>
-                    <p><b>Max population     : </b> 10 000 people </p>
-                    <p><b>Current population : </b> 9 540 people </p>
+                    {
+                        this.state.selectedRegion > -1 &&
+                        <div>
+                            <p><b>Area : </b> {regions[this.state.selectedRegion].area} m² </p>
+                            <p><b>Max population : </b> {regions[this.state.selectedRegion].max_population} people </p>
+                            <p><b>Current population : </b> {regions[this.state.selectedRegion].current_population} people </p>
+                        </div>
+                    }
                 </Modal>
 
                 <MyMapComponent
@@ -131,7 +137,7 @@ class Map extends Component {
                             <Polygon
                                 key={index}
                                 label={region.name}
-                                onClick={this.openRegionModal}
+                                onClick={this.openRegionModal(index)}
                                 options={region.options}
                                 zIndex={100}
                                 path={region.path}
