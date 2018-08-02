@@ -7,9 +7,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={14}
         defaultCenter={{ lat: 21.416017, lng: 39.892154 }}
-        options={{
-            styles: mapStyles
-        }}
+        options={{ styles: mapStyles }}
     >
         <Marker zIndex={101} position={{ lat: 21.423785, lng: 39.893493 }} icon={FenceIcon} />
         <Marker zIndex={101} position={{ lat: 21.420980, lng: 39.893824 }} icon={FenceIcon} />
@@ -19,7 +17,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             label={'helloooo'}
             options={{
                 strokeColor: '#039be5', strokeWeight: 2,
-                fillColor: '#039be5', fillOpacity: 0.2
+                fillColor: '#039be5', fillOpacity: 0.5
             }}
             zIndex={100}
             path={[
