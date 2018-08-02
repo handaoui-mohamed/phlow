@@ -176,5 +176,125 @@
                 "lng": 39.892383
             }
         ]
+    },
+    {
+        "name": "region-4",
+        "area": 40000,
+        "max_population": 10000,
+        "current_population": 9702,
+        "options": {
+            "strokeColor": "#2ecc71",
+            "strokeWeight": 2,
+            "fillColor": "#2ecc71",
+            "fillOpacity": 0.5
+        },
+        "path": [
+            {
+                "lat": 21.420299,
+                "lng": 39.875198
+            },
+            {
+                "lat": 21.419770,
+                "lng": 39.874629
+            },
+            {
+                "lat": 21.420549,
+                "lng": 39.873599
+            },
+            {
+                "lat": 21.421168,
+                "lng": 39.873975
+            }
+        ]
+    },
+    {
+        "name": "region-5",
+        "area": 40000,
+        "max_population": 10000,
+        "current_population": 9702,
+        "options": {
+            "strokeColor": "#e74c3c",
+            "strokeWeight": 2,
+            "fillColor": "#e74c3c",
+            "fillOpacity": 0.5
+        },
+        "path": [
+            {
+                "lat": 21.420549,
+                "lng": 39.873599
+            },
+            {
+                "lat": 21.421168,
+                "lng": 39.873975
+            },
+            {
+                "lat": 21.421777,
+                "lng": 39.872859
+            },
+            {
+                "lat": 21.420998,
+                "lng": 39.872462
+            }
+        ]
+    },
+    {
+        "name": "region-6",
+        "area": 40000,
+        "max_population": 10000,
+        "current_population": 9702,
+        "options": {
+            "strokeColor": "#2ecc71",
+            "strokeWeight": 2,
+            "fillColor": "#2ecc71",
+            "fillOpacity": 0.5
+        },
+        "path": [
+            {
+                "lat": 21.420998,
+                "lng": 39.872462
+            },
+            {
+                "lat": 21.421777,
+                "lng": 39.872859
+            },
+            {
+                "lat": 21.422167,
+                "lng": 39.871829
+            },
+            {
+                "lat": 21.421567,
+                "lng": 39.871518
+            }
+        ]
+    },
+    {
+        "name": "region-7",
+        "area": 40000,
+        "max_population": 10000,
+        "current_population": 9702,
+        "options": {
+            "strokeColor": "#3498db",
+            "strokeWeight": 2,
+            "fillColor": "#3498db",
+            "fillOpacity": 0.5
+        },
+        "path": [
+            {
+                "lat": 21.422167,
+                "lng": 39.871829
+            },
+            {
+                "lat": 21.421567,
+                "lng": 39.871518
+            },
+            {
+                "lat": 21.421917,
+                "lng": 39.870391
+            },
+            {
+                "lat": 21.422666,
+                "lng": 39.870681
+            }
+        ]
     }
 ]
