@@ -14,7 +14,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
         {/* regions */}
         <Polygon
-            label={'helloooo'}
+            label={'region-1'}
             options={{
                 strokeColor: '#039be5', strokeWeight: 2,
                 fillColor: '#039be5', fillOpacity: 0.5
@@ -32,6 +32,25 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 { lat: 21.423184, lng: 39.892196 },
                 { lat: 21.423690, lng: 39.892397 },
                 { lat: 21.423790, lng: 39.893435 }
+            ]}
+        />
+
+        <Polygon
+            label={'region-2'}
+            options={{
+                strokeColor: '#2ecc71', strokeWeight: 2,
+                fillColor: '#2ecc71', fillOpacity: 0.5
+            }}
+            zIndex={100}
+            path={[
+                { lat: 21.423841, lng: 39.893513 },
+                { lat: 21.423976, lng: 39.894988 },
+                { lat: 21.423338, lng: 39.895063 },
+                { lat: 21.423177, lng: 39.894983 },
+                { lat: 21.421601, lng: 39.895146 },
+                { lat: 21.421341, lng: 39.894985 },
+                { lat: 21.420959, lng: 39.893847 },
+                { lat: 21.423841, lng: 39.893513 }
             ]}
         />
         {/* /regions */}
