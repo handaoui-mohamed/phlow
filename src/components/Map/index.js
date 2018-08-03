@@ -123,6 +123,7 @@ class Map extends Component {
                             <p><b>Area : </b> {regions[this.state.selectedRegion].area} m² </p>
                             <p><b>Max population : </b> {regions[this.state.selectedRegion].max_population} people </p>
                             <p><b>Current population : </b> {regions[this.state.selectedRegion].current_population} people </p>
+                            <p><b>Percentage : </b> {Math.floor(regions[this.state.selectedRegion].current_population * 100 / regions[this.state.selectedRegion].max_population)} % </p>
                         </div>
                     }
                 </Modal>

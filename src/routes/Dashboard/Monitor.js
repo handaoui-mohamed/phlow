@@ -92,9 +92,9 @@ export default class Monitor extends PureComponent {
                 <Col span={8}>
                   <Pie
                     animate={false}
-                    percent={28}
-                    subTitle="---------"
-                    total="28%"
+                    percent={97}
+                    subTitle="region-3"
+                    total="97%"
                     height={128}
                     lineWidth={2}
                   />
@@ -103,9 +103,9 @@ export default class Monitor extends PureComponent {
                   <Pie
                     animate={false}
                     color="#5DDECF"
-                    percent={22}
-                    subTitle="----------"
-                    total="22%"
+                    percent={93}
+                    subTitle="region-5"
+                    total="93%"
                     height={128}
                     lineWidth={2}
                   />
@@ -114,9 +114,9 @@ export default class Monitor extends PureComponent {
                   <Pie
                     animate={false}
                     color="#2FC25B"
-                    percent={32}
-                    subTitle="----------"
-                    total="32%"
+                    percent={60}
+                    subTitle="region-1"
+                    total="60%"
                     height={128}
                     lineWidth={2}
                   />
