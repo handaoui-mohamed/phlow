@@ -84,7 +84,7 @@ export default class Monitor extends PureComponent {
               bodyStyle={{ textAlign: 'center' }}
               bordered={false}
             >
-              <Gauge title='' height={180} percent={82} />
+              <Gauge title='' height={202} percent={82} />
             </Card>
           </Col>
         </Row>
