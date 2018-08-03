@@ -93,7 +93,7 @@ export default class Monitor extends PureComponent {
             <Card
               title={
                 <div style={{ display: "-webkit-inline-box" }}>
-                  <span>Region-2</span>
+                  <span>R2, F4</span>
                   <div style={{ width: '-webkit-fill-available' }} />
                   <Button>Live Camera</Button>
                 </div>
@@ -108,7 +108,7 @@ export default class Monitor extends PureComponent {
             <Card
               title={
                 <div style={{ display: "-webkit-inline-box" }}>
-                  <span>Region-1</span>
+                  <span>R1, F4</span>
                   <div style={{ width: '-webkit-fill-available' }} />
                   <Button>Live Camera</Button>
                 </div>
@@ -123,7 +123,7 @@ export default class Monitor extends PureComponent {
             <Card
               title={
                 <div style={{ display: "-webkit-inline-box" }}>
-                  <span>Region-3</span>
+                  <span>R3, F4</span>
                   <div style={{ width: '-webkit-fill-available' }} />
                   <Button>Live Camera</Button>
                 </div>
@@ -138,7 +138,7 @@ export default class Monitor extends PureComponent {
             <Card
               title={
                 <div style={{ display: "-webkit-inline-box" }}>
-                  <span>Region-4</span>
+                  <span>R4, F4</span>
                   <div style={{ width: '-webkit-fill-available' }} />
                   <Button>Live Camera</Button>
                 </div>
