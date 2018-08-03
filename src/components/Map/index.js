@@ -86,7 +86,7 @@ class Map extends Component {
                         this.state.selectedMarker > -1 &&
                         this.state.barriersState.slice(0, markers[this.state.selectedMarker].row).map((row, rowIndex) => (
                             <div>
-                                {markers[this.state.selectedMarker].row > 1 && <h3> Level {rowIndex + 1}</h3>}
+                                {markers[this.state.selectedMarker].row > 1 && <h3> Floor {rowIndex + 1}</h3>}
                                 <Row style={{ display: '-webkit-box' }} key={rowIndex}>
                                     {
                                         row.map((barrier, index) =>
