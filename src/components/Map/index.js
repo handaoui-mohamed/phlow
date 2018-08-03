@@ -15,8 +15,11 @@ import mina from './data/mina.json'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={14}
-        defaultCenter={{ lat: 21.416017, lng: 39.892154 }}
+        defaultZoom={16}
+        defaultCenter={{
+            "lat": 21.420888,
+            "lng": 39.873793
+        }}
         options={{ styles: mapStyles }}
     >
         {props.children}

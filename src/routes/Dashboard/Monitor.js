@@ -42,7 +42,7 @@ export default class Monitor extends PureComponent {
         <Row gutter={24}>
           <Col xl={24} lg={24} md={24} sm={24} xs={24}>
             <Card style={{ marginBottom: 24, position: 'relative', textAlign: 'center' }} bordered={false}>
-              <span style={{ fontSize: 25 }}>Current Map : <b>Mina</b></span>
+              <span style={{ fontSize: 25 }}>Current Map : <b>Jamarat Bridge, Mina</b></span>
               <Button style={{ position: 'absolute', top: '10px', right: '10px' }}>Change map</Button>
               <div style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '40px', backgroundColor: '#555' }}> <Clock /> </div>
             </Card>
@@ -91,16 +91,13 @@ export default class Monitor extends PureComponent {
         <Row gutter={24}>
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
-              title="Region-3"
-              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
-              bordered={false}
-            >
-              <WaterWave height={161} percent={97} />
-            </Card>
-          </Col>
-          <Col xl={6} lg={12} sm={24} xs={24}>
-            <Card
-              title="Region-5"
+              title={
+                <div style={{ display: "-webkit-inline-box" }}>
+                  <span>Region-2</span>
+                  <div style={{ width: '-webkit-fill-available' }} />
+                  <Button>Live Camera</Button>
+                </div>
+              }
               bodyStyle={{ textAlign: 'center', fontSize: 0 }}
               bordered={false}
             >
@@ -109,20 +106,47 @@ export default class Monitor extends PureComponent {
           </Col>
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
-              title="Region-1"
-              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
-              bordered={false}
-            >
-              <WaterWave height={161} percent={60} />
-            </Card>
-          </Col>
-          <Col xl={6} lg={12} sm={24} xs={24}>
-            <Card
-              title="Region-4"
+              title={
+                <div style={{ display: "-webkit-inline-box" }}>
+                  <span>Region-1</span>
+                  <div style={{ width: '-webkit-fill-available' }} />
+                  <Button>Live Camera</Button>
+                </div>
+              }
               bodyStyle={{ textAlign: 'center', fontSize: 0 }}
               bordered={false}
             >
               <WaterWave height={161} percent={58} />
+            </Card>
+          </Col>
+          <Col xl={6} lg={12} sm={24} xs={24}>
+            <Card
+              title={
+                <div style={{ display: "-webkit-inline-box" }}>
+                  <span>Region-3</span>
+                  <div style={{ width: '-webkit-fill-available' }} />
+                  <Button>Live Camera</Button>
+                </div>
+              }
+              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
+              bordered={false}
+            >
+              <WaterWave height={161} percent={44} />
+            </Card>
+          </Col>
+          <Col xl={6} lg={12} sm={24} xs={24}>
+            <Card
+              title={
+                <div style={{ display: "-webkit-inline-box" }}>
+                  <span>Region-4</span>
+                  <div style={{ width: '-webkit-fill-available' }} />
+                  <Button>Live Camera</Button>
+                </div>
+              }
+              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
+              bordered={false}
+            >
+              <WaterWave height={161} percent={12} />
             </Card>
           </Col>
         </Row>
