@@ -1,6 +1,6 @@
 [
     {
-        "name": "region-1",
+        "name": "Region-1",
         "area": 80000,
         "max_population": 25000,
         "current_population": 1704,
@@ -58,7 +58,7 @@
         ]
     },
     {
-        "name": "region-2",
+        "name": "Region-2",
         "area": 80000,
         "max_population": 25000,
         "current_population": 15200,
@@ -104,7 +104,7 @@
         ]
     },
     {
-        "name": "region-3",
+        "name": "Region-3",
         "area": 40000,
         "max_population": 10000,
         "current_population": 9702,
@@ -178,7 +178,7 @@
         ]
     },
     {
-        "name": "region-4",
+        "name": "Region-4",
         "area": 24000,
         "max_population": 15000,
         "current_population": 8702,
@@ -208,7 +208,7 @@
         ]
     },
     {
-        "name": "region-5",
+        "name": "Region-5",
         "area": 24000,
         "max_population": 15000,
         "current_population": 14003,
@@ -238,7 +238,7 @@
         ]
     },
     {
-        "name": "region-6",
+        "name": "Region-6",
         "area": 24000,
         "max_population": 15000,
         "current_population": 6702,
@@ -268,7 +268,7 @@
         ]
     },
     {
-        "name": "region-7",
+        "name": "Region-7",
         "area": 24000,
         "max_population": 15000,
         "current_population": 1840,

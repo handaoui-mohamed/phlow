@@ -225,21 +225,7 @@ class BasicLayout extends React.PureComponent {
           isMobile={mb}
           onCollapse={this.handleMenuCollapse}
         /> */}
-        <Layout>
-          <Header style={{ padding: 0 }}>
-            <GlobalHeader
-              logo={logo}
-              currentUser={currentUser}
-              fetchingNotices={fetchingNotices}
-              notices={notices}
-              collapsed={collapsed}
-              isMobile={mb}
-              onNoticeClear={this.handleNoticeClear}
-              onCollapse={this.handleMenuCollapse}
-              onMenuClick={this.handleMenuClick}
-              onNoticeVisibleChange={this.handleNoticeVisibleChange}
-            />
-          </Header>
+        <Layout style={{ backgroundColor: '#555' }}>
           <Content style={{ margin: '24px 24px 0', height: '100%' }}>
             <Switch>
               {redirectData.map(item => (
@@ -259,7 +245,7 @@ class BasicLayout extends React.PureComponent {
               <Route render={NotFound} />
             </Switch>
           </Content>
-          <Footer style={{ padding: 0 }}>
+          {/* <Footer style={{ padding: 0, marginTop: '20px' }}>
             <GlobalFooter
               copyright={
                 <Fragment>
@@ -267,7 +253,7 @@ class BasicLayout extends React.PureComponent {
                 </Fragment>
               }
             />
-          </Footer>
+          </Footer> */}
         </Layout>
       </Layout>
     );

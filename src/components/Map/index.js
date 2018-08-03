@@ -109,7 +109,7 @@ class Map extends Component {
                 </Modal>
 
                 <Modal
-                    title="Region details"
+                    title={`Region details | ${this.state.selectedRegion > -1 ? regions[this.state.selectedRegion].name : ''}`}
                     visible={this.state.regionModalOpen}
                     width={'fit-content'}
                     cancelText={'Cancel'}
@@ -132,7 +132,7 @@ class Map extends Component {
                     isMarkerShown
                     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDLHhE48HvQ6B3407JD41rZwFa_tnf5ppc"
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
+                    containerElement={<div style={{ height: `510px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 >
                     {

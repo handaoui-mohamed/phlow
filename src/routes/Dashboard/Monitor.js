@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'dva';
-import { Row, Col, Card, Tooltip } from 'antd';
+import { Row, Col, Card, Tooltip, Button } from 'antd';
 import numeral from 'numeral';
 import { Pie, WaterWave, Gauge, TagCloud } from 'components/Charts';
 import NumberInfo from 'components/NumberInfo';
@@ -40,9 +40,16 @@ export default class Monitor extends PureComponent {
     return (
       <Fragment>
         <Row gutter={24}>
+          <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+            <Card style={{ marginBottom: 24, position: 'relative', textAlign: 'center' }} bordered={false}>
+              <span style={{ fontSize: 25 }}>Current Map : <b>Mina</b></span>
+              <Button style={{ position: 'absolute', top: '10px', right: '10px' }}>Change map</Button>
+              <div style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '40px', backgroundColor: '#555' }}> <Clock /> </div>
+            </Card>
+          </Col>
           <Col xl={18} lg={24} md={24} sm={24} xs={24} style={{ marginBottom: 24 }}>
-            <Card title="Mina Map" bordered={false}>
-              <Row>
+            <Card title="" bordered={false}>
+              {/* <Row>
                 <Col md={6} sm={12} xs={24}>
                   <NumberInfo
                     subTitle="------"
@@ -63,16 +70,12 @@ export default class Monitor extends PureComponent {
                     total={numeral(234).format('0,0')}
                   />
                 </Col>
-              </Row>
-              <div className={styles.mapChart}>
-                <Tooltip title="----------">
-                  <Map />
-                </Tooltip>
-              </div>
+              </Row> */}
+              <Map />
             </Card>
           </Col>
           <Col xl={6} lg={24} md={24} sm={24} xs={24}>
-            <Card title={<div style={{ fontSize: '40px', backgroundColor: '#555' }}> <Clock /> </div>} style={{ marginBottom: 24 }} bordered={false}>
+            <Card style={{ marginBottom: 24 }} bordered={false}>
               <ActiveChart />
             </Card>
             <Card
@@ -86,60 +89,40 @@ export default class Monitor extends PureComponent {
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col xl={12} lg={24} sm={24} xs={24}>
-            <Card title="-----------" bordered={false} className={styles.pieCard}>
-              <Row style={{ padding: '16px 0' }}>
-                <Col span={8}>
-                  <Pie
-                    animate={false}
-                    percent={97}
-                    subTitle="region-3"
-                    total="97%"
-                    height={128}
-                    lineWidth={2}
-                  />
-                </Col>
-                <Col span={8}>
-                  <Pie
-                    animate={false}
-                    color="#5DDECF"
-                    percent={93}
-                    subTitle="region-5"
-                    total="93%"
-                    height={128}
-                    lineWidth={2}
-                  />
-                </Col>
-                <Col span={8}>
-                  <Pie
-                    animate={false}
-                    color="#2FC25B"
-                    percent={60}
-                    subTitle="region-1"
-                    total="60%"
-                    height={128}
-                    lineWidth={2}
-                  />
-                </Col>
-              </Row>
+          <Col xl={6} lg={12} sm={24} xs={24}>
+            <Card
+              title="Region-3"
+              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
+              bordered={false}
+            >
+              <WaterWave height={161} percent={97} />
             </Card>
           </Col>
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
-              title="---------"
+              title="Region-5"
               bodyStyle={{ textAlign: 'center', fontSize: 0 }}
               bordered={false}
             >
-              <WaterWave height={161} title="--------" percent={72} />
+              <WaterWave height={161} percent={93} />
             </Card>
           </Col>
           <Col xl={6} lg={12} sm={24} xs={24}>
             <Card
-              title="---------"
+              title="Region-1"
               bodyStyle={{ textAlign: 'center', fontSize: 0 }}
               bordered={false}
             >
-              <WaterWave height={161} title="--------" percent={34} />
+              <WaterWave height={161} percent={60} />
+            </Card>
+          </Col>
+          <Col xl={6} lg={12} sm={24} xs={24}>
+            <Card
+              title="Region-4"
+              bodyStyle={{ textAlign: 'center', fontSize: 0 }}
+              bordered={false}
+            >
+              <WaterWave height={161} percent={58} />
             </Card>
           </Col>
         </Row>
