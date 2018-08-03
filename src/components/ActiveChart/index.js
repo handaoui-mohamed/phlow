@@ -42,7 +42,7 @@ export default class ActiveChart extends Component {
 
     return (
       <div className={styles.activeChart}>
-        <NumberInfo subTitle="--------" total="------------" />
+        <NumberInfo subTitle="" total="Pilgrim flow" />
         <div style={{ marginTop: 32 }}>
           <MiniArea
             animate={false}
@@ -65,8 +65,8 @@ export default class ActiveChart extends Component {
         </div>
         {activeData && (
           <div className={styles.activeChartGrid}>
-            <p>{[...activeData].sort()[activeData.length - 1].y + 200} ----</p>
-            <p>{[...activeData].sort()[Math.floor(activeData.length / 2)].y} ----</p>
+            <p>{[...activeData].sort()[activeData.length - 1].y + 200} in</p>
+            <p>{[...activeData].sort()[Math.floor(activeData.length / 2)].y} out</p>
           </div>
         )}
         {activeData && (

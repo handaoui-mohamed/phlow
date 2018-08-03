@@ -79,12 +79,12 @@ export default class Monitor extends PureComponent {
               <ActiveChart />
             </Card>
             <Card
-              title="-----------"
+              title="Flow speed changes"
               style={{ marginBottom: 24 }}
               bodyStyle={{ textAlign: 'center' }}
               bordered={false}
             >
-              <Gauge title="------------" height={180} percent={87} />
+              <Gauge title='' height={180} percent={82} />
             </Card>
           </Col>
         </Row>
